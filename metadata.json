@@ -1,0 +1,8 @@
+{
+  "name": "Alex Vance - Cybersecurity Engineer Portfolio",
+  "description": "A high-end, professional portfolio for a cybersecurity engineer featuring interactive security labs, case studies, and a Gemini-powered security advisor.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
