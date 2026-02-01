@@ -3,21 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SABIRI Mohamed Amine | Cybersecurity Engineer</title>
     
-    <!-- This fixes the Favicon 404 error -->
+    <!-- 1. Content Security Policy (CSP) -->
+    <!-- This tells the browser only to trust content from your own site and Google Fonts -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';">
+
+    <!-- 2. Referrer Policy -->
+    <!-- Prevents the browser from sending your URL when you click a link to another site -->
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- 3. X-Frame-Options (Clickjacking Protection) -->
+    <!-- Note: Meta tags for X-Frame-Options are less supported, so we add a frame-busting script below -->
+    
+    <title>SABIRI Mohamed Amine | Security Engineer</title>
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- 4. Anti-Clickjacking Script (Manual X-Frame-Options) -->
+    <style id="antiClickjack">body{display:none !important;}</style>
+    <script type="text/javascript">
+        if (self === top) {
+            var antiClickjack = document.getElementById("antiClickjack");
+            antiClickjack.parentNode.removeChild(antiClickjack);
+        } else {
+            top.location = self.location;
+        }
+    </script>
   <script type="module" crossorigin src="/my-portfolio/assets/index-CGi0pROm.js"></script>
   <link rel="stylesheet" crossorigin href="/my-portfolio/assets/index-RzOqn2CD.css">
 </head>
 <body>
-    <div id="root"></div>
-
-    <!-- Your React entry point -->
+    <div id="root"></div>
 </body>
 </html>
